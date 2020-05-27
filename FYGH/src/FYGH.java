@@ -127,6 +127,11 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 	    Yakhin.setBounds(300, 340, 200, 50);
 	    fr.add(Yakhin);
 	    
+	    JLabel Karimov = new JLabel("<html>Iskander.karimov75@gmail</html>"); // <----— Èñêàíäåð
+	    Karimov.setBounds(250, 380, 200, 50);
+	    fr.add(Karimov);
+	    
+	    
 	    JLabel fgb = new JLabel("ÔÃÁÎÓ ÂÎ"); //íàäïèñü
 		fgb.setBounds(120, 420, 180, 50);
 		fr.add(fgb);
