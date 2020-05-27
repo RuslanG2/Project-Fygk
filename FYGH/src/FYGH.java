@@ -119,6 +119,10 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 	    Gallyamov.setBounds(300, 360, 200, 50);
 	    fr.add(Gallyamov);
 	    
+	    JLabel Fazlyev = new JLabel("<html>Eduard.fazlyev.1999@mail.ru</html>"); // <----— Ýäèê
+	    Fazlyev.setBounds(250, 320, 200, 50);
+	    fr.add(Fazlyev);
+	    
 	    JLabel fgb = new JLabel("ÔÃÁÎÓ ÂÎ"); //íàäïèñü
 		fgb.setBounds(120, 420, 180, 50);
 		fr.add(fgb);
