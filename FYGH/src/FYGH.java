@@ -120,6 +120,18 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 	    Fazlyev.setBounds(250, 320, 200, 50);
 	    fr.add(Fazlyev);
 	    
+	    JLabel Fazlyev = new JLabel("<html>Eduard.fazlyev.1999@mail.ru</html>"); // <----— Ýäèê		    
+	    Fazlyev.setBounds(250, 320, 200, 50);
+	    fr.add(Fazlyev);		  
+	    
+	    JLabel Yakhin = new JLabel("<html>Ozikmans@mail.ru</html>"); // <----— Àçàìàò
+	    Yakhin.setBounds(300, 340, 200, 50);
+	    fr.add(Yakhin);
+	    
+	    JLabel Karimov = new JLabel("<html>Iskander.karimov75@gmail</html>"); // <----— Èñêàíäåð
+	    Karimov.setBounds(250, 380, 200, 50);
+	    fr.add(Karimov);
+	    
 	    JLabel fgb = new JLabel("ÔÃÁÎÓ ÂÎ"); //íàäïèñü
 		fgb.setBounds(120, 420, 180, 50);
 		fr.add(fgb);
