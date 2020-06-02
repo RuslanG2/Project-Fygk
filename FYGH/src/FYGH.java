@@ -115,10 +115,7 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 	    }});
 	    fr.add(pre);
 	    
-	    JLabel Gallyamov = new JLabel("<html>Grusil@mail.ru</html>"); // <----Ч –услан
-	    Gallyamov.setBounds(300, 360, 200, 50);
-	    fr.add(Gallyamov);
-	    
+	 
 	    JLabel Fazlyev = new JLabel("<html>Eduard.fazlyev.1999@mail.ru</html>"); // <----Ч Ёдик
 	    Fazlyev.setBounds(250, 320, 200, 50);
 	    fr.add(Fazlyev);
