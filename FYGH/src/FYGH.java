@@ -123,7 +123,7 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 	    Fazlyev.setBounds(250, 320, 200, 50);
 	    fr.add(Fazlyev);
 	    
-	    JLabel Yakhin = new JLabel("<html>Ozikmans@mail.ru</html>"); // <----Ч јзамат 
+	    JLabel Yakhin = new JLabel("<html>Ozikmans@mail.ru</html>"); // <----Ч  јзамат 
 	    Yakhin.setBounds(300, 340, 200, 50);
 	    fr.add(Yakhin);
 	    
