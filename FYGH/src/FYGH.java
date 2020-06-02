@@ -115,9 +115,9 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 	    }});
 	    fr.add(pre);
 	    
-	    JLabel Gallyamov = new JLabel("<html>Grusil@mail.ru</html>"); // <----Ч –услан
-	    Gallyamov.setBounds(300, 360, 200, 50);
-	    fr.add(Gallyamov);
+	    JLabel Karimov = new JLabel("<html>Iskander.karimov75@gmail</html>"); // <----Ч »скандер
+	    Karimov.setBounds(250, 380, 200, 50);
+	    fr.add(Karimov);
 	    
 	    JLabel Fazlyev = new JLabel("<html>Eduard.fazlyev.1999@mail.ru</html>"); // <----Ч Ёдик 
 	    Fazlyev.setBounds(250, 320, 200, 50);
@@ -162,6 +162,7 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 		JLabel info2 = new JLabel("<html> нопка информации добавлена</html>");
 		info2.setBounds(525, 325, 150, 50);
 		fr.add(info2);
+		
 		
 		
 		fr.setVisible(true);
