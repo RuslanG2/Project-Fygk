@@ -115,22 +115,10 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 	    }});
 	    fr.add(pre);
 	    
-	    JLabel Karimov = new JLabel("<html>Iskander.karimov75@gmail</html>"); // <----— Искандер
-	    Karimov.setBounds(250, 380, 200, 50);
-	    fr.add(Karimov);
-	    
+	 
 	    JLabel Fazlyev = new JLabel("<html>Eduard.fazlyev.1999@mail.ru</html>"); // <----— Эдик 
 	    Fazlyev.setBounds(250, 320, 200, 50);
 	    fr.add(Fazlyev);
-	    
-	    JLabel Yakhin = new JLabel("<html>Ozikmans@mail.ru</html>"); // <----—  Азамат 
-	    Yakhin.setBounds(300, 340, 200, 50);
-	    fr.add(Yakhin);
-	    
-	    JLabel Karimov = new JLabel("<html>Iskander.karimov75@gmail</html>"); // <----— Искандер
-	    Karimov.setBounds(250, 380, 200, 50);
-	    fr.add(Karimov);
-	    
 	    
 	    JLabel fgb = new JLabel("ФГБОУ ВО"); //надпись
 		fgb.setBounds(120, 420, 180, 50);
@@ -147,22 +135,6 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 		JLabel inf2 = new JLabel("Руководитель: Казанцев");
 		inf2.setBounds(525, 300, 480, 50);
 		fr.add(inf2); //12
-		
-		JButton info = new JButton("Информация");
-		info.setBounds(525, 400, 150, 25);
-		fr.add(info);
-
-
-		info.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-		JOptionPane.showMessageDialog(null,"https://github.com/RuslanG2/Project-Fygk","Info", JOptionPane.INFORMATION_MESSAGE);
-		}
-		});
-
-		JLabel info2 = new JLabel("<html>Кнопка информации добавлена</html>");
-		info2.setBounds(525, 325, 150, 50);
-		fr.add(info2);
-		
 		
 		
 		fr.setVisible(true);
