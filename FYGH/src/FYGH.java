@@ -115,7 +115,7 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 	    }});
 	    fr.add(pre);
 	    
-	    JLabel Gallyamov = new JLabel("<html>Grusil@mail.ru</html>"); // <----— Руслан 
+	    JLabel Gallyamov = new JLabel("<html>Grusil@mail.ru</html>"); // <----— Руслан  
 	    Gallyamov.setBounds(300, 360, 200, 50);
 	    fr.add(Gallyamov);
 	    
