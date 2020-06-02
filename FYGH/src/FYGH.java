@@ -116,7 +116,7 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 	    fr.add(pre);
 	    
 	 
-	    JLabel Fazlyev = new JLabel("<html>Eduard.fazlyev.1999@mail.ru</html>"); // <----Ч Ёдик
+	    JLabel Fazlyev = new JLabel("<html>Eduard.fazlyev.1999@mail.ru</html>"); // <----Ч Ёдик 
 	    Fazlyev.setBounds(250, 320, 200, 50);
 	    fr.add(Fazlyev);
 	    
