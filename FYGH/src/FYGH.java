@@ -115,9 +115,9 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 	    }});
 	    fr.add(pre);
 	    
-	    JLabel Gallyamov = new JLabel("<html>Grusil@mail.ru</html>"); // <----— Ðóñëàí  
-	    Gallyamov.setBounds(300, 360, 200, 50);
-	    fr.add(Gallyamov);
+	    JLabel Karimov = new JLabel("<html>Iskander.karimov75@gmail</html>"); // <----— Èñêàíäåð
+	    Karimov.setBounds(250, 380, 200, 50);
+	    fr.add(Karimov);
 	    
 	    JLabel fgb = new JLabel("ÔÃÁÎÓ ÂÎ"); //íàäïèñü
 		fgb.setBounds(120, 420, 180, 50);
