@@ -119,7 +119,11 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 	    Gallyamov.setBounds(300, 360, 200, 50);
 	    fr.add(Gallyamov);
 
-		 
+	    JLabel Yakhin = new JLabel("<html>Ozikmans@mail.ru</html>"); // <----— Àçàìàò
+	    Yakhin.setBounds(300, 340, 200, 50);
+	    fr.add(Yakhin);
+
+	    
 	    
 	    JLabel fgb = new JLabel("ÔÃÁÎÓ ÂÎ"); //íàäïèñü
 		fgb.setBounds(120, 420, 180, 50);
