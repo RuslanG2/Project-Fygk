@@ -115,7 +115,12 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 	    }});
 	    fr.add(pre);
 	    
-		 
+	    
+	    JLabel Fazlyev = new JLabel("<html>Eduard.fazlyev.1999@mail.ru</html>"); // <----— Ýäèê 
+	    Fazlyev.setBounds(250, 320, 200, 50);
+	    fr.add(Fazlyev);
+	    
+
 	    
 	    
 	    JLabel fgb = new JLabel("ÔÃÁÎÓ ÂÎ"); //íàäïèñü
