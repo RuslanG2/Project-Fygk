@@ -115,7 +115,10 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 	    }});
 	    fr.add(pre);
 	    
-		 
+	    JLabel Karimov = new JLabel("<html>Iskander.karimov75@gmail</html>"); // <----— Èñêàíäåð
+	    Karimov.setBounds(250, 380, 200, 50);
+	    fr.add(Karimov);
+
 	    
 	    
 	    JLabel fgb = new JLabel("ÔÃÁÎÓ ÂÎ"); //íàäïèñü
