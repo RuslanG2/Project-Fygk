@@ -133,6 +133,7 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 		inf2.setBounds(525, 300, 480, 50);
 		fr.add(inf2); //12
 		
+		// кнопка тут
 		JButton info = new JButton("Информация");
 		info.setBounds(525, 400, 150, 25);
 		fr.add(info);
@@ -146,7 +147,7 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 
 		JLabel info2 = new JLabel("<html>Кнопка информации добавлена</html>");
 		info2.setBounds(525, 325, 150, 50);
-		fr.add(info2);
+		fr.add(info2); 
 		
 		fr.setVisible(true);
 	m.setBounds(0,0,600,500);
