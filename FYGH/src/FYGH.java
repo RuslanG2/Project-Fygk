@@ -1,9 +1,26 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.awt.event.MouseAdapter; //added
+import java.awt.event.MouseEvent;
 import javax.swing.*;
 import java.util.Scanner;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import javax.swing.border.Border;
+
+
+
+
+
 
 @SuppressWarnings("serial")
 public class FYGH extends JPanel{
@@ -13,7 +30,7 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 		g.drawImage(img, 0, 0, 600, 300, null);
 	}	
 	
-	public static void main(String[] args){
+	public static void main(String[] args) throws URISyntaxException, IOException {
 		JFrame fr = new JFrame();
 			FYGH m = new FYGH();
 		m.setBounds(0,0,600,480);			
@@ -22,7 +39,9 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 
 
 		fr.setLayout(null);
+		
 		fr.setSize(700,510);
+		fr.setSize(700,710);
 		fr.getContentPane().setBackground(Color.WHITE); 
 		fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		fr.setTitle("FYGK_вариант_7"); 
@@ -133,15 +152,75 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 	    Karimov.setBounds(250, 380, 200, 50);
 	    fr.add(Karimov);
 
-	    
+	    JTextArea txtfilecont = new JTextArea("");
+	    txtfilecont.setBounds(20, 508, 650, 150);
+	    txtfilecont.setVisible(true);
+	    txtfilecont.setLineWrap(true);
+	    Border border = BorderFactory.createLineBorder(Color.BLACK);
+	    txtfilecont.setBorder(BorderFactory.createCompoundBorder(border,BorderFactory.createEmptyBorder(10, 10, 10, 10)));
+	    fr.add(txtfilecont);
+
+	    JFileChooser fileopen = new JFileChooser();
+
+	    JButton choosetxtbutton = new JButton("Загрузить данные из текстового файла");
+	    choosetxtbutton.setAlignmentX(CENTER_ALIGNMENT);
+	    choosetxtbutton.addActionListener(new ActionListener() {
+	    public void actionPerformed(ActionEvent e) {
+	    JFileChooser fileopen = new JFileChooser();
+	    int ret = fileopen.showDialog(null, "Открыть файл");
+	    if (ret == JFileChooser.APPROVE_OPTION) {
+	    if (ret == JFileChooser.APPROVE_OPTION) {
+	    File file = fileopen.getSelectedFile();
+	    String filename = file.getName();
+	    String filedir = file.getAbsolutePath();
+	    filedir = filedir.replace('\\', '/');
+	    try {
+	    String content = readUsingFiles(filedir);
+	    txtfilecont.setText(content);
+	    }
+	    catch (Exception ex) {
+	    System.out.println("Ошибка");
+	    }
+	    }
+	    }
+	    }
+	    });
+	    choosetxtbutton.setBounds(225, 473, 300, 25);
+	    fr.add(choosetxtbutton);
 	    
 	    JLabel fgb = new JLabel("ФГБОУ ВО"); //надпись
 		fgb.setBounds(120, 420, 180, 50);
 		fr.add(fgb);
 	    
-	    JLabel ulrle = new JLabel("<html><p><a href=\"http://asu.ugatu.ac.ru\">АСУ УГАТУ</a></p></html>");
-	    ulrle.setBounds(120, 435, 110, 50);
-		fr.add(ulrle); //1
+		final URI uri = new URI("http://ugatu.su");
+		class OpenUrlAction implements ActionListener {
+		@Override public void actionPerformed(ActionEvent e) {
+		open(uri);
+		}
+		}
+
+		class MouseHandler extends MouseAdapter { //added
+		public void mouseEntered(MouseEvent me) {
+		fr.invalidate();
+		fr.validate();
+		fr.repaint();
+		}
+		public void mouseExited(MouseEvent me) {
+		fr.invalidate();
+		fr.validate();
+		fr.repaint();
+		}
+		}
+
+		JButton buttonuri = new JButton();
+		buttonuri.setText("<HTML><FONT color=\"#000099\"><U>ugatu.su</U></FONT></HTML>");
+		buttonuri.setBounds(101, 450, 100, 20);
+		buttonuri.setBorderPainted(false);
+		buttonuri.setOpaque(false);
+		buttonuri.setBackground(Color.WHITE);
+		buttonuri.addActionListener(new OpenUrlAction());
+		buttonuri.addMouseListener(new MouseHandler());
+		fr.add(buttonuri);
 		
 		JLabel inf = new JLabel("Курсовая работа делается Фазлыевом, Яхиным, Галлямовым и Каримовым");
 		inf.setBounds(225, 435, 480, 50);
@@ -170,4 +249,16 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 		fr.setVisible(true);
 	m.setBounds(0,0,600,500);
 	}
+	
+	public static void open(URI uri) { //added
+		if (Desktop.isDesktopSupported()) {
+		try {
+		Desktop.getDesktop().browse(uri);
+		} catch (IOException e) { /* TODO: error handling */ }
+		} else { /* TODO: error handling */ }
+		}
+	
+	private static String readUsingFiles(String fileName) throws IOException {
+		return new String(Files.readAllBytes(Paths.get(fileName)));
+		}
 }
