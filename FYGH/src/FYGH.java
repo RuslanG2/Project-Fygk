@@ -8,6 +8,17 @@ import java.util.Scanner;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import javax.swing.border.Border;
+
+
+
 
 
 
@@ -19,7 +30,7 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 		g.drawImage(img, 0, 0, 600, 300, null);
 	}	
 	
-	public static void main(String[] args) throws URISyntaxException {
+	public static void main(String[] args) throws URISyntaxException, IOException {
 		JFrame fr = new JFrame();
 			FYGH m = new FYGH();
 		m.setBounds(0,0,600,480);			
@@ -28,7 +39,9 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 
 
 		fr.setLayout(null);
+		
 		fr.setSize(700,510);
+		fr.setSize(700,710);
 		fr.getContentPane().setBackground(Color.WHITE); 
 		fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		fr.setTitle("FYGK_вариант_7"); 
@@ -139,7 +152,41 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 	    Karimov.setBounds(250, 380, 200, 50);
 	    fr.add(Karimov);
 
-	    
+	    JTextArea txtfilecont = new JTextArea("");
+	    txtfilecont.setBounds(20, 508, 650, 150);
+	    txtfilecont.setVisible(true);
+	    txtfilecont.setLineWrap(true);
+	    Border border = BorderFactory.createLineBorder(Color.BLACK);
+	    txtfilecont.setBorder(BorderFactory.createCompoundBorder(border,BorderFactory.createEmptyBorder(10, 10, 10, 10)));
+	    fr.add(txtfilecont);
+
+	    JFileChooser fileopen = new JFileChooser();
+
+	    JButton choosetxtbutton = new JButton("Загрузить данные из текстового файла");
+	    choosetxtbutton.setAlignmentX(CENTER_ALIGNMENT);
+	    choosetxtbutton.addActionListener(new ActionListener() {
+	    public void actionPerformed(ActionEvent e) {
+	    JFileChooser fileopen = new JFileChooser();
+	    int ret = fileopen.showDialog(null, "Открыть файл");
+	    if (ret == JFileChooser.APPROVE_OPTION) {
+	    if (ret == JFileChooser.APPROVE_OPTION) {
+	    File file = fileopen.getSelectedFile();
+	    String filename = file.getName();
+	    String filedir = file.getAbsolutePath();
+	    filedir = filedir.replace('\\', '/');
+	    try {
+	    String content = readUsingFiles(filedir);
+	    txtfilecont.setText(content);
+	    }
+	    catch (Exception ex) {
+	    System.out.println("Ошибка");
+	    }
+	    }
+	    }
+	    }
+	    });
+	    choosetxtbutton.setBounds(225, 473, 300, 25);
+	    fr.add(choosetxtbutton);
 	    
 	    JLabel fgb = new JLabel("ФГБОУ ВО"); //надпись
 		fgb.setBounds(120, 420, 180, 50);
@@ -209,5 +256,9 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 		Desktop.getDesktop().browse(uri);
 		} catch (IOException e) { /* TODO: error handling */ }
 		} else { /* TODO: error handling */ }
+		}
+	
+	private static String readUsingFiles(String fileName) throws IOException {
+		return new String(Files.readAllBytes(Paths.get(fileName)));
 		}
 }
