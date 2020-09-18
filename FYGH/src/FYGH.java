@@ -24,7 +24,7 @@ import javax.swing.border.Border;
 
 @SuppressWarnings("serial")
 public class FYGH extends JPanel{
-
+	static int colortype = 1;
 Image img = new ImageIcon("src/1.jpg").getImage();	
 	public void paintComponent(Graphics g){
 		g.drawImage(img, 0, 0, 600, 300, null);
@@ -235,6 +235,27 @@ Image img = new ImageIcon("src/1.jpg").getImage();
 		info.setBounds(525, 400, 150, 25);
 		fr.add(info);
 
+		JButton chcolor = new JButton("Переключить фон");
+		chcolor.setBounds(525, 473, 150, 25);
+		chcolor.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+		switch (FYGH.colortype) {
+		case 0: fr.getContentPane().setBackground(Color.WHITE);
+		txtfilecont.setBackground(Color.WHITE);
+		break;
+		case 1: fr.getContentPane().setBackground(Color.GRAY);
+		txtfilecont.setBackground(Color.GRAY);
+		break;
+		case 2: fr.getContentPane().setBackground(Color.LIGHT_GRAY);
+		txtfilecont.setBackground(Color.LIGHT_GRAY);
+		break;
+		}
+		FYGH.colortype++;
+		if (FYGH.colortype==3) FYGH.colortype=0;
+		fr.setBackground(Color.CYAN);
+		}
+		});
+		fr.add(chcolor);
 
 		info.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
